@@ -11,6 +11,33 @@
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
   </head>
   <body>
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '503695630112882',
+          cookie     : true,
+          xfbml      : true,
+          version    : '3.2'
+        });
+
+        FB.getLoginStatus(function(response){
+          if(response.status === 'connected'){
+            document.getElementById('status').innerHTML = 'Você está conectado!';
+          }else  if(response.status === 'not_authorized'){
+            document.getElementById('status').innerHTML = 'Você não está logado!';
+           }else {
+            document.getElementById('status').innerHTML = 'Você não está logado no facebook!';
+           }
+       });
+
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "https://connect.facebook.net/en_US/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+    </script>
     <!--[if lt IE 10]>
       <p>
         You are using an <strong>outdated</strong> browser. Please
