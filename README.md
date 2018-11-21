@@ -1,3 +1,11 @@
+
+# Install Node.Js 10.13
+    https://nodejs.org/en/
+    
+# Install @Angular/Cli
+    npm install -g @angular/cli
+
+
 # ngX Starter Kit
 
 Web project starter kit including modern tools and workflow based on
