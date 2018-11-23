@@ -1,0 +1,6 @@
+<div class="lista-postagem row">
+  <div class="col-md-12" *ngFor="let postagem of postagens">
+    <app-item-postagem class="postagem" [postagem]="postagem" (selecionaPostagem)="onSelecionaPostagem($event)">
+    </app-item-postagem>
+  </div>
+</div>

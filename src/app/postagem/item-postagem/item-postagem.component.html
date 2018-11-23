@@ -1,0 +1,9 @@
+<div class="card">
+  <div class="card-header" translate>Post: {{ postagem?.Titulo }}</div>
+  <div class="card-body">
+    <p class="card-text">{{ postagem?.Texto }}</p>
+    <span class="btn btn-primary" (click)="executarAcao('selecionaPostagem'); $event.stopPropagation()" translate
+      >Read more</span
+    >
+  </div>
+</div>

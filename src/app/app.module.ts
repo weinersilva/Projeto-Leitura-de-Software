@@ -18,6 +18,17 @@ import { AboutModule } from './about/about.module';
 import { LoginModule } from './login/login.module';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { UserModule } from './user/user.module';
+import { PostagemModule } from './postagem/postagem.module';
+
+export const firebaseConfig = {
+  apiKey: 'AIzaSyDUWcx9mERvs6nEGrZnXWCl8N4ch_tfgew',
+  authDomain: 'blog-leitura-de-software.firebaseapp.com',
+  databaseURL: 'https://blog-leitura-de-software.firebaseio.com',
+  projectId: 'blog-leitura-de-software',
+  storageBucket: 'blog-leitura-de-software.appspot.com',
+  messagingSenderId: '584117582853'
+};
 
 @NgModule({
   imports: [
@@ -26,15 +37,20 @@ import { AppRoutingModule } from './app-routing.module';
     FormsModule,
     HttpClientModule,
     TranslateModule.forRoot(),
-    NgbModule,
+    NgbModule.forRoot(),
     CoreModule,
     SharedModule,
     ShellModule,
     HomeModule,
     AboutModule,
     LoginModule,
+    UserModule,
+    PostagemModule,
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFirestoreModule,
     AppRoutingModule // must be imported as the last module as it contains the fallback route
   ],
+  exports: [AngularFireModule, AngularFirestoreModule],
   declarations: [AppComponent],
   providers: [],
   bootstrap: [AppComponent]
